@@ -31,7 +31,7 @@ fun ans1(inputRecs: List<String>): Int {
 
 fun ans2(inputRecs: List<String>): Int {
 
-  fun oxygenRating(): Int {
+  fun calculateLifeSupportRating(rateType: RateType): Int {
     val patternStr = StringBuilder("")
     for (i in inputRecs[0].toCharArray().indices) {
       val arr = IntArray(2){0}
@@ -43,34 +43,24 @@ fun ans2(inputRecs: List<String>): Int {
         return filtered.single().toInt(2)
       }
 
-      val gIndex = if (arr[0] == arr[1]) 1 else arr.indices.maxByOrNull { bit -> arr[bit] }!!
-      patternStr.append(gIndex)
+      val patternBit =  when (rateType) {
+        RateType.OxygenRating -> if (arr[0] == arr[1]) 1 else arr.indices.maxByOrNull { bit -> arr[bit] }!!
+        RateType.CO2Rating -> if (arr[0] == arr[1]) 0 else arr.indices.minByOrNull { bit -> arr[bit] }!!
+      }
+      patternStr.append(patternBit)
     }
     return patternStr.toString().toInt(2)
   }
-  fun co2ScrubberRate(): Int {
-    val patternStr = StringBuilder("")
-    for (i in inputRecs[0].toCharArray().indices) {
-      val arr = IntArray(2){0}
-      val filtered = inputRecs.filter { it.startsWith(patternStr.toString()) }
-      filtered.forEach {
-        arr[it[i].digitToInt()]++
-      }
-      if (filtered.size == 1) {
-        return filtered.single().toInt(2)
-      }
-
-      val gIndex = if (arr[0] == arr[1]) 0 else arr.indices.minByOrNull { bit -> arr[bit] }!!
-      patternStr.append(gIndex)
-    }
-    return patternStr.toString().toInt(2)
-  }
-  val oxygenGenRating = oxygenRating()
-  val co2ScrubberRate = co2ScrubberRate()
+  val oxygenGenRating = calculateLifeSupportRating(RateType.OxygenRating)
+  val co2ScrubberRate = calculateLifeSupportRating(RateType.CO2Rating)
   println("oxygen generator rating: $oxygenGenRating, bin: ${oxygenGenRating.toString(2)}")
   println("CO2 Scrubber rating: $co2ScrubberRate, bin: ${co2ScrubberRate.toString(2)}")
 
   return oxygenGenRating * co2ScrubberRate
+}
+
+enum class RateType {
+  OxygenRating, CO2Rating
 }
 
 fun main() {
