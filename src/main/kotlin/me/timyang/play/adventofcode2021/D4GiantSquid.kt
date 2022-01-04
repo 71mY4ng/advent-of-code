@@ -1,47 +1,32 @@
 package me.timyang.play.adventofcode2021
 
-import java.util.*
-
 class D4GiantSquid(
-  val boards: List<List<List<String>>>,
-  val calls: List<String>
+  var boards: List<Board>,
+  val calls: List<Int>
 ) {
-  val markers = Array(boards.size) {
-    Array(5) {0}
-  }
-  fun searchForCall(call: String): List<Pair<Int, Int>> {
-    val callExistences = ArrayList<Pair<Int, Int>>()
-    boards.forEachIndexed { bIndex, b ->
-      b.forEachIndexed {
-          rIndex, r ->
-        if (r.contains(call)) {
-//          println("board: $bIndex, row: $rIndex, ${r.reduceRight{item, acc -> "$item, $acc" }}, found: $call")
-          callExistences.add(bIndex to rIndex)
+  fun calling(calls: List<Int>) {
+    calls.forEach { call ->
+      boards.forEach { b ->
+        b.markCalled(call)
+        if (!b.completed && b.isComplete()) {
+          val sumOfUnmarkeds = b.unmarked().sumOf { grid -> grid.value }
+          println("bingo: $call, unmarkedSum: $sumOfUnmarkeds")
+          println("final score: ${call * sumOfUnmarkeds}")
+          b.completed = true
         }
       }
     }
-    return callExistences
   }
-  fun calling(calls: List<String>): CallResult {
-    calls.forEachIndexed {
-        callIndex, call ->
-      for ((b, r) in searchForCall(call)) {
-        markers[b][r]++
-        if (markers[b][r] == 5) {
-          return CallResult(b, r, callIndex)
-        }
-      }
-    }
-    error("calling failed")
-  }
+
   fun printCalls() {
     calls.forEach { print("$it,")}
   }
+
   fun printBoards() {
     boards.forEachIndexed {
-        index, arrayList ->
-      println("## board $index:")
-      arrayList.forEach {println(it)}
+        index, board ->
+      println("## board $index: ")
+      println(board)
     }
   }
 
@@ -70,39 +55,67 @@ fun main() {
 //  """.trimIndent().lines()
   val input = Utils.readFileLines("src/main/resources/adventofcode/d4_input")
 
-  fun parseInput(lines: List<String>): Pair<List<String>, List<List<List<String>>>> {
-    val calls = lines[0].split(",")
+  fun parseInput(lines: List<String>): Pair<List<Int>, List<Board>> {
+    val calls = lines[0].split(",").map { it.toInt() }
     val rowSplitPattern = """\s+""".toRegex()
-    val boards = lines.subList(1, lines.size)
-      .filter { it.trim() != "" }
+    val boards = lines.drop(1)
+      .filter { it.isNotBlank() }
       .map { it.trim().split(rowSplitPattern)  }
       .chunked(5)
+      .map {
+        Board.fromCollection(it)
+      }
     return calls to boards
   }
 
   val (calls, boards) = parseInput(input)
   val game = D4GiantSquid(boards, calls)
 
-  val callResult = game.calling(calls)
-  val bingo = calls[callResult.callIndex].toInt()
-  val called = calls.subList(0, callResult.callIndex)
-  val (board, row) = callResult.bingoBoard to callResult.bingoRow
-  val umarkeds = boards[board].filterIndexed {
-      rIndex, _ ->  rIndex != row
-  }.flatten().filter { !called.contains(it) }
-
-  println("unmarked: ${umarkeds.reduceRight { v, acc -> "$v, $acc"}}")
-  println("called: $called")
-
-  val unmarkedSum = umarkeds.sumOf { it.toInt() }
-
-  println("bingo: $bingo, unmarkedSum: $unmarkedSum")
-  println("final score: ${bingo * unmarkedSum}")
-
+  game.calling(calls)
 }
 
-class CallResult(
-  val bingoBoard: Int,
-  val bingoRow: Int,
-  val callIndex: Int
-)
+data class Board(val rows: List<List<Grid>>, var completed: Boolean = false) {
+
+  companion object {
+    fun fromCollection(rows: List<List<String>>): Board {
+      return Board(rows.map { cols -> cols.map { Grid(value=it.toInt()) } })
+    }
+  }
+
+  fun markCalled(call: Int){
+    this.rows.map { columns ->
+      columns.map { grid ->
+        if (grid.value == call) {
+          grid.mark()
+        }
+      }
+    }
+  }
+
+  fun unmarked(): List<Grid> {
+    return rows.flatten().filterNot { it.marked }
+  }
+
+  fun isComplete() = checkRow() || checkColumn()
+
+  private fun checkRow(): Boolean {
+    return rows.any {
+      it.all { grid -> grid.marked }
+    }
+  }
+
+  private fun checkColumn(): Boolean {
+    return rows.indices.any { col ->
+      rows[0].indices.map { row -> rows[row][col] }.all { grid -> grid.marked }
+    }
+  }
+}
+
+class Grid(
+  var marked: Boolean = false,
+  val value: Int
+) {
+  fun mark() {
+    this.marked = true
+  }
+}
