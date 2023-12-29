@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac97b797-fcd7-4f55-aeaa-ef7c5dfc30dc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/aoc_java/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/advent_of_code_kt.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/timyang/play/adventofcode2021/D1SonarSweep.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/play/adventofcode2021/D1SonarSweep.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/timyang/play/adventofcode2021/D2SubmarineDive.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/play/adventofcode2021/D2SubmarineDive.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/timyang/play/adventofcode2021/D3BinaryDiagnostic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/play/adventofcode2021/D3BinaryDiagnostic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/timyang/play/adventofcode2021/D4GiantSquid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/play/adventofcode2021/D4GiantSquid.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/timyang/play/adventofcode2021/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/play/adventofcode2021/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/timyang/play/foofuns/AbsClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/play/foofuns/AbsClass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/timyang/play/foofuns/PlayFuncs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/play/foofuns/PlayFuncs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/timyang/play/foofuns/RandomDecider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/play/foofuns/RandomDecider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/me/timyang/play/foofuns/Rectangle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/kotlin/play/foofuns/Rectangle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode/d1_input" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/resources/adventofcode/d1_input" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode/d2_input" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/resources/adventofcode/d2_input" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode/d3_input" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/resources/adventofcode/d3_input" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adventofcode/d4_input" beforeDir="false" afterPath="$PROJECT_DIR$/aoc_kt/src/main/resources/adventofcode/d4_input" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="advent-of-code-kt" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2aDDLCkHqrHtHNynvuoN9pQCP0n" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/MyFiles/tech/mygit/advent-of-code",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyFiles\tech\mygit\advent-of-code\aoc_kt\src\main\resources" />
+      <recent name="D:\MyFiles\tech\mygit\advent-of-code\aoc_kt\src\main\kotlin" />
+      <recent name="D:\MyFiles\tech\mygit\advent-of-code\aoc_kt" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-semeru-1.8.0_402-f644763e9732-cd8dfe1b" />
+        <option value="jdk-17.0.9-corretto-17.0.9-8336523bb0d9-93b19daf" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac97b797-fcd7-4f55-aeaa-ef7c5dfc30dc" name="Changes" comment="" />
+      <created>1703844197528</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703844197528</updated>
+    </task>
+    <servers />
+  </component>
+</project>
